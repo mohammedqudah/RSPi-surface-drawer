@@ -78,7 +78,7 @@ class distance:
 
 class draw:
     def coordinations(self, distance, angle):
-        radian = angle * 0.0174533,2
+        radian = angle * 0.0174533
         x = round(distance * math.cos(radian),1)
         y = round(distance*math.sin(radian),1)
         return [x,y]
