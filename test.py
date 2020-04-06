@@ -38,11 +38,11 @@ class step_motor:
         if degree > 0:
             rotations = round(degree / 0.7)
             for i in range(rotations):
-                self.clock()
+                self.clockwise()
         else:
             rotations = round(degree / 0.7 * -1)
             for i in range(rotations):
-                self.anticlock()
+                self.counter_clockwise()
 
 
 class distance:
