@@ -26,13 +26,13 @@ class step_motor:
             [1, 0, 0, 1]
         ]
 
-    def clockwise(self):
+    def counter_clockwise(self):
         for halfstep in range(8):
             for pin in range(4):
                 GPIO.output(self.control_pins[pin], self.halfstep_seq[halfstep][pin])
             time.sleep(0.001)
 
-    def counter_clockwise(self):
+    def clockwise(self):
         for halfstep in range(7, -1, -1):
             for pin in range(4):
                 GPIO.output(self.control_pins[pin], self.halfstep_seq[halfstep][pin])
@@ -86,6 +86,7 @@ class draw:
         return [x,y]
     def plot(self,x,y,file):
         plot.scatter(x,y)
+        plot.plot(x,y)
         plot.savefig(file)
 
 
@@ -104,7 +105,7 @@ if __name__ == "__main__":
         x.append(x_y[0])
         y.append(x_y[1])
         motor.move(moving_angle)
-        angle =+ moving_angle
+        angle = angle + moving_angle
         time.sleep(1)
     surround.plot(x,y,'/tmp/fig1.png')
 
