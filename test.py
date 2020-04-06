@@ -101,7 +101,7 @@ if __name__ == "__main__":
     moving_angle = 1
     x=[]
     y=[]
-    for i in range(360):
+    for i in range(180):
         print(dstnc.distance())
         x_y=surround.coordinations(dstnc.distance(),angle)
         x.append(x_y[0])
