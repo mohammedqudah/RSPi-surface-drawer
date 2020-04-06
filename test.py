@@ -96,17 +96,17 @@ if __name__ == "__main__":
     surround = draw()
 
     angle = 0
-    moving_angle = 10
+    moving_angle = 1
     x=[]
     y=[]
-    for i in range(18):
+    for i in range(360):
         print(dstnc.distance())
         x_y=surround.coordinations(dstnc.distance(),angle)
         x.append(x_y[0])
         y.append(x_y[1])
         motor.move(moving_angle)
         angle = angle + moving_angle
-        time.sleep(1)
+        time.sleep(0.1)
     surround.plot(x,y,'/tmp/fig1.png')
 
     GPIO.cleanup()
