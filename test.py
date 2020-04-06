@@ -99,6 +99,7 @@ if __name__ == "__main__":
         surround.coordinations(dstnc.distance(),angle)
         motor.move(moving_angle)
         angle =+ moving_angle
+        time.sleep(1)
     surround.savefig('/tmp/fig1.png')
 
     GPIO.cleanup()
