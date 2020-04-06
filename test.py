@@ -78,7 +78,7 @@ class distance:
 if __name__ == "__main__":
     motor = step_motor()
 
-    for angle in range(0,360,90):
+    for angle in range(4):
         print(angle)
-        motor.move(angle)
+        motor.move(90)
     GPIO.cleanup()
