@@ -6,7 +6,7 @@ class step_motor:
     def __init__(self):
         GPIO.setwarnings(False)
         GPIO.setmode(GPIO.BCM)
-        control_pins = [26, 19, 13, 6]
+        self.control_pins = [26, 19, 13, 6]
         for pin in control_pins:
             GPIO.setup(pin, GPIO.OUT)
             GPIO.output(pin, 0)
@@ -25,13 +25,13 @@ class step_motor:
     def clockwise(self):
         for halfstep in range(8):
             for pin in range(4):
-                GPIO.output(control_pins[pin], self.halfstep_seq[halfstep][pin])
+                GPIO.output(self.control_pins[pin], self.halfstep_seq[halfstep][pin])
             time.sleep(0.001)
 
     def counter_clockwise(self):
         for halfstep in range(7, -1, -1):
             for pin in range(4):
-                GPIO.output(control_pins[pin], self.halfstep_seq[halfstep][pin])
+                GPIO.output(self.control_pins[pin], self.halfstep_seq[halfstep][pin])
             time.sleep(0.001)
 
     def move(self, degree):
