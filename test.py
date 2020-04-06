@@ -1,5 +1,7 @@
 import RPi.GPIO as GPIO
 import time
+import math
+import matplotlib.pyplot as plot
 
 
 class step_motor:
@@ -74,13 +76,29 @@ class distance:
         distance = (TimeElapsed * 34300) / 2
         return distance
 
+class draw:
+    def coordinations(self, distance, angle):
+        radian = angle * 0.0174533,2
+        x = round(distance * math.cos(radian),1)
+        y = round(distance*math.sin(radian),1)
+        return [x,y]
+    def plot(self,coordinations):
+        plot.scatter(coordinations[0],coordinations[1])
+    def savefig(self,file):
+        plot.savefig(file)
+
 
 if __name__ == "__main__":
     motor = step_motor()
     dstnc = distance()
+    surround = draw()
 
+    angle = 0
+    moving_angle = 10
+    for i in range(18):
+        surround.coordinations(dstnc.distance(),angle)
+        motor.move(moving_angle)
+        angle =+ moving_angle
+    surround.savefig('/tmp/fig1.png')
 
-    for angle in range(2):
-        motor.move(90)
-        print(dstnc.distance())
     GPIO.cleanup()
