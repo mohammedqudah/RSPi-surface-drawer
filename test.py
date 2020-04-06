@@ -96,6 +96,7 @@ if __name__ == "__main__":
     angle = 0
     moving_angle = 10
     for i in range(18):
+        print(dstnc.distance())
         surround.coordinations(dstnc.distance(),angle)
         motor.move(moving_angle)
         angle =+ moving_angle
