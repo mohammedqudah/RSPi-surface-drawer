@@ -7,7 +7,7 @@ class step_motor:
         GPIO.setwarnings(False)
         GPIO.setmode(GPIO.BCM)
         self.control_pins = [26, 19, 13, 6]
-        for pin in control_pins:
+        for pin in self.control_pins:
             GPIO.setup(pin, GPIO.OUT)
             GPIO.output(pin, 0)
 
