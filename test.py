@@ -84,9 +84,8 @@ class draw:
         x = round(distance * math.cos(radian),1)
         y = round(distance*math.sin(radian),1)
         return [x,y]
-    def plot(self,coordinations):
-        plot.scatter(coordinations[0],coordinations[1])
-    def savefig(self,file):
+    def plot(self,x,y,file):
+        plot.scatter(x,y)
         plot.savefig(file)
 
 
@@ -97,12 +96,16 @@ if __name__ == "__main__":
 
     angle = 0
     moving_angle = 10
+    x=[]
+    y=[]
     for i in range(18):
         print(dstnc.distance())
-        surround.coordinations(dstnc.distance(),angle)
+        x_y=surround.coordinations(dstnc.distance(),angle)
+        x.append(x_y[0])
+        y.append(x_y[1])
         motor.move(moving_angle)
         angle =+ moving_angle
         time.sleep(1)
-    surround.savefig('/tmp/fig1.png')
+    surround.plt(x,y,'/tmp/fig1.png')
 
     GPIO.cleanup()
