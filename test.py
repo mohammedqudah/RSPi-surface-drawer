@@ -106,6 +106,6 @@ if __name__ == "__main__":
         motor.move(moving_angle)
         angle =+ moving_angle
         time.sleep(1)
-    surround.plt(x,y,'/tmp/fig1.png')
+    surround.plot(x,y,'/tmp/fig1.png')
 
     GPIO.cleanup()
