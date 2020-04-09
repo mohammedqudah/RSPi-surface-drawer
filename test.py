@@ -69,11 +69,10 @@ class distance:
         while GPIO.input(self.GPIO_ECHO) == 0:
             StartTime = time.time()
         # save time of arrival
-        delta = 0
-        while GPIO.input(self.GPIO_ECHO) == 1 and delta < 1:
+        delta = 0.000
+        while GPIO.input(self.GPIO_ECHO) == 1 and delta < 0.234:
             StopTime = time.time()
             delta = StopTime - StartTime
-            print('time diff is '+str(delta))
         # time difference between start and arrival
         TimeElapsed = StopTime - StartTime
         # multiply with the sonic speed (34300 cm/s)
@@ -98,11 +97,12 @@ if __name__ == "__main__":
     surround = draw()
 
     angle = 0
-    moving_angle = 5
+    moving_angle = 10
     x=[]
     y=[]
     for i in range(120):
         #print(dstnc.distance())
+        print(angle)
         x_y=surround.coordinations(dstnc.distance(),angle)
         x.append(x_y[0])
         y.append(x_y[1])
