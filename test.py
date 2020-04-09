@@ -73,6 +73,7 @@ class distance:
         while GPIO.input(self.GPIO_ECHO) == 1 and delta < 0.234:
             StopTime = time.time()
             delta = StopTime - StartTime
+            print(delta)
         # time difference between start and arrival
         TimeElapsed = StopTime - StartTime
         # multiply with the sonic speed (34300 cm/s)
@@ -97,7 +98,7 @@ if __name__ == "__main__":
     surround = draw()
 
 
-    moving_angle = 10
+    moving_angle = 1
     x=[]
     y=[]
     for angle in range (0,120,moving_angle):
