@@ -102,7 +102,7 @@ if __name__ == "__main__":
     moving_angle = 1
     x=[]
     y=[]
-    for i in range(180):
+    for i in range(270):
         #print(dstnc.distance())
         x_y=surround.coordinations(dstnc.distance(),angle)
         x.append(x_y[0])
@@ -110,6 +110,6 @@ if __name__ == "__main__":
         motor.move(moving_angle)
         angle = angle + moving_angle
         time.sleep(0.1)
-    surround.plot(x,y,'/usr/share/nginx/html/fig.png')
+    surround.plot(x,y,'/var/www/html/fig.png')
 
     GPIO.cleanup()
