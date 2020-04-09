@@ -70,7 +70,7 @@ class distance:
             StartTime = time.time()
         # save time of arrival
         delta = 0.000
-        while GPIO.input(self.GPIO_ECHO) == 1 and delta < 0.234:
+        while GPIO.input(self.GPIO_ECHO) == 1 and delta < 0.0234:
             StopTime = time.time()
             delta = StopTime - StartTime
             print(delta)
