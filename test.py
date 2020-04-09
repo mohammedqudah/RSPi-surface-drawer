@@ -103,7 +103,7 @@ if __name__ == "__main__":
     x=[]
     y=[]
     for i in range(180):
-        print(dstnc.distance())
+        #print(dstnc.distance())
         x_y=surround.coordinations(dstnc.distance(),angle)
         x.append(x_y[0])
         y.append(x_y[1])
