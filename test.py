@@ -110,6 +110,6 @@ if __name__ == "__main__":
         motor.move(moving_angle)
         angle = angle + moving_angle
         time.sleep(0.1)
-    surround.plot(x,y,'/usr/share/nginx/html/')
+    surround.plot(x,y,'/usr/share/nginx/html/fig.png')
 
     GPIO.cleanup()
