@@ -88,7 +88,6 @@ class draw:
         y = round(distance*math.sin(radian),1)
         return [x,y]
     def plot(self,x,y,file):
-        plot.scatter(x,y)
         plot.plot(x,y)
         plot.savefig(file)
 
