@@ -98,7 +98,7 @@ if __name__ == "__main__":
     surround = draw()
 
 
-    moving_angle = 1
+    moving_angle = 2
     x=[]
     y=[]
     for angle in range (0,120,moving_angle):
@@ -107,7 +107,7 @@ if __name__ == "__main__":
         x.append(x_y[0])
         y.append(x_y[1])
         motor.move(moving_angle)
-        time.sleep(0.2)
+        time.sleep(0.5)
     surround.plot(x,y,'/var/www/html/fig.png')
 
     GPIO.cleanup()
