@@ -98,10 +98,10 @@ if __name__ == "__main__":
     surround = draw()
 
     angle = 0
-    moving_angle = 1
+    moving_angle = 5
     x=[]
     y=[]
-    for i in range(100):
+    for i in range(120):
         #print(dstnc.distance())
         x_y=surround.coordinations(dstnc.distance(),angle)
         x.append(x_y[0])
