@@ -96,18 +96,16 @@ if __name__ == "__main__":
     dstnc = distance()
     surround = draw()
 
-    angle = 0
+
     moving_angle = 10
     x=[]
     y=[]
-    for i in range(120):
+    for angle in range (0,120,moving_angle):
         #print(dstnc.distance())
-        print(angle)
         x_y=surround.coordinations(dstnc.distance(),angle)
         x.append(x_y[0])
         y.append(x_y[1])
         motor.move(moving_angle)
-        angle = angle + moving_angle
         time.sleep(0.1)
     surround.plot(x,y,'/var/www/html/fig.png')
 
