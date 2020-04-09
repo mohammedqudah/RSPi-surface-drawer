@@ -107,7 +107,7 @@ if __name__ == "__main__":
         x.append(x_y[0])
         y.append(x_y[1])
         motor.move(moving_angle)
-        time.sleep(0.1)
+        time.sleep(0.2)
     surround.plot(x,y,'/var/www/html/fig.png')
 
     GPIO.cleanup()
