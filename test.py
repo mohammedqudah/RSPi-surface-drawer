@@ -73,6 +73,7 @@ class distance:
         while GPIO.input(self.GPIO_ECHO) == 1 and delta < 1:
             StopTime = time.time()
             delta = StopTime - StartTime
+            print(delta)
         # time difference between start and arrival
         TimeElapsed = StopTime - StartTime
         # multiply with the sonic speed (34300 cm/s)
